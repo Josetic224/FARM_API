@@ -7,7 +7,7 @@ app.use(express.json())
 
 
 port = process.env.PORT
-app.get('/api/v1/animal', (req, res)=>{
+app.get('/', (req, res)=>{
     res.send(`welcome to my Farm`)
 })
 

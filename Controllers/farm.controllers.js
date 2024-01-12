@@ -24,7 +24,7 @@ exports['createAnimal'] = async (req, res, next) => {
 }
 //get all animals created 
 exports.fetchAnimals= async (req,res,next)=> {
-    const allAnimals = await farmModel.find()
+    const allAnimals = await farmModel.find() .sort({'updatedAt': -1}).all((posts))
     //if no animals are found in the database it will send a message saying that there is no animals available
     if(!allAnimals){
         res.status(400).json({
@@ -111,3 +111,5 @@ return res.status(200).json({
     data:matured
 })
 }
+
+
